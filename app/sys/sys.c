@@ -13,6 +13,7 @@
 /* Includes ----------------------------------------------------------------- */
 #include "platform_common.h"
 #include "bsp.h"
+#include "bsp_temp.h"
 
 /* Private defines ---------------------------------------------------------- */
 #define EXAMPLE_ESP_WIFI_SSID "A06.11"
@@ -24,6 +25,7 @@
 /* Private Constants -------------------------------------------------------- */
 static const char *TAG = "sys";
 static EventGroupHandle_t m_wifi_event_group;
+static float temperature;
 
 /* Private macros ----------------------------------------------------------- */
 /* Private enumerate/structure ---------------------------------------------- */
@@ -37,15 +39,18 @@ static void m_wifi_init_sta(void);
 /* Function definitions ----------------------------------------------------- */
 void sys_boot(void)
 {
-  // Board Support Package init
   bsp_init();
 
-  m_wifi_init_sta();
+  // m_wifi_init_sta();
 }
 
 void sys_run(void)
 {
-  vTaskDelay(pdMS_TO_TICKS(100));
+  vTaskDelay(pdMS_TO_TICKS(2000));
+  
+  bsp_temp_get_value(&temperature);
+  
+  ESP_LOGI(TAG, "Temperature: %f", temperature);
 }
 
 /* Private function --------------------------------------------------------- */
