@@ -22,7 +22,7 @@
  */
 void app_main(void)
 {
-  sys_boot();
+   sys_boot();
 
   while (1)
   {

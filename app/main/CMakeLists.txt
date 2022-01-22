@@ -1,8 +1,5 @@
-set (ALL_INCLUDE_DIRS
-    ${CMAKE_SOURCE_DIR}/sys
-    ${CMAKE_SOURCE_DIR}/components/platform
-    ${CMAKE_SOURCE_DIR}/components/rfal/include
-)
-
-idf_component_register(SRCS "main.c"
-                    INCLUDE_DIRS ${ALL_INCLUDE_DIRS})
+idf_component_register(SRCS "sys_damos_ram.c" "main.c"
+                       SRCS "bsp.c"
+                       SRCS "sys.c"
+                       SRCS "bsp_temp.c"
+                       INCLUDE_DIRS ".")

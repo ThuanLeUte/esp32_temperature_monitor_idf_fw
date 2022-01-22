@@ -3,10 +3,6 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := esp32-idf-aws-fw
-PROJECT_VER  := v1.0.0
-
-EXTRA_COMPONENT_DIRS += $(PROJECT_PATH)/sys/
+PROJECT_NAME := blink
 
 include $(IDF_PATH)/make/project.mk
-

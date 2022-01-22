@@ -33,13 +33,13 @@ extern "C" {
 #include "freertos/semphr.h"
 #include "freertos/timers.h"
 #include "freertos/event_groups.h"
-#include "freertos/xtensa_api.h"
+// #include "freertos/xtensa_api.h"
 
 // ESP32
 #include "esp_system.h"
 #include "esp_log.h"
 #include "esp_err.h"
-#include "esp32/clk.h"
+// #include "esp32/clk.h"
 #include "esp_wifi.h"
 #include "esp_event.h"
 #include "nvs_flash.h"
